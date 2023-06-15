@@ -4,4 +4,18 @@
   <artifactId>TiendasCommon</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>TiendasCommon</name>
+  
+    <dependencies>
+	 	<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.3.3</version>
+		</dependency>
+	</dependencies>
+	
 </project>
