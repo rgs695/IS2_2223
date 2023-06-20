@@ -67,7 +67,10 @@ public class Tienda implements Serializable {
 	 * @return Total mensual sueldos 
 	 */
 	public double gastoMensualSueldos() {
-	 //TODO
-		return 0;
+	double gastoTotal = 0;
+	for (Empleado e: empleados) {
+		gastoTotal = gastoTotal + e.sueldo();
+	}
+		return gastoTotal;
 	}
 }

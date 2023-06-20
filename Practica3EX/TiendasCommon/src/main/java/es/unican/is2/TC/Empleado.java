@@ -98,8 +98,39 @@ public class Empleado {
 	 * Retorna el sueldo bruto del empleado
 	 */
 	public double sueldo() {
-		//TODO
-		return 0;
+		
+		double sueldo = 0, base = 0, aumento = 0;
+		
+		LocalDate antiguedad1 = LocalDate.now().minusYears(5);
+		LocalDate antiguedad2 = LocalDate.now().minusYears(10);
+		LocalDate antiguedad3 = LocalDate.now().minusYears(15);
+		
+		if (categoria == categoria.ENCARGADO) {
+			base = 1200;
+		} else if (categoria == categoria.DEPENDIENTE) {
+			base = 1000;
+		}
+		
+		if (categoria == categoria.DEPENDIENTE) {
+			
+			if (fechaContrato.isBefore(antiguedad3)) {
+				aumento = 150;
+			} else if (fechaContrato.isBefore(antiguedad2)) {
+				aumento = 100;
+			} else if (fechaContrato.isBefore(antiguedad1)) {
+				aumento = 50;
+			} else {
+				aumento = 0;
+			}
+		}
+		
+		sueldo = base + aumento;
+		
+		if (baja == true) {
+			sueldo = sueldo - (sueldo *0.25);
+		}
+		
+		return sueldo;
 	}
 	
 }
