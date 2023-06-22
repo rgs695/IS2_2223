@@ -39,7 +39,7 @@ public class ListaOrdenadaAcotadaTest {
 		lista.add(3);
 		
 		//si anhado uno mas salta la excepcion
-		assertThrows(RuntimeException.class, () -> lista.add(3));
+		assertThrows(IllegalStateException.class, () -> lista.add(3));
 
 		assertEquals(3, lista.size());
 		assertEquals(1, lista.get(0));

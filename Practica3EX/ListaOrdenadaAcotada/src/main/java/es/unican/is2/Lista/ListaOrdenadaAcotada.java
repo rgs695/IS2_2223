@@ -24,7 +24,7 @@ public class ListaOrdenadaAcotada<E extends Comparable<E>> implements IListaOrde
             throw new NullPointerException();
         }
         if (lista.size() >= capacidad) {
-            throw new RuntimeException("La lista está llena. No se puede agregar más elementos.");
+            throw new IllegalStateException("La lista está llena. No se puede agregar más elementos.");
         }
         int indice = 0;
         if (lista.size() != 0) {
